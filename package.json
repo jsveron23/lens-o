@@ -1,0 +1,61 @@
+{
+  "name": "object-path",
+  "version": "1.0.0",
+  "description": "Parse object path",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "scripts": {
+    "clean": "rimraf lib es",
+    "build": "npm run clean && NODE_ENV=production rollup --config ./rollup.config.js",
+    "lint": "eslint 'src/**/*.js'",
+    "prettier": "prettier -c src/**/*.js",
+    "test": "nyc ava",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "parse",
+    "object",
+    "path",
+    "object-path"
+  ],
+  "files": [
+    "lib",
+    "es"
+  ],
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "arrowParens": "always",
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "proseWrap": "always"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsveron23/object-path.git"
+  },
+  "author": "Tony Jin <jsveron23@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/runtime": "^7.20.1",
+    "ramda": "^0.28.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.2",
+    "@babel/eslint-parser": "^7.19.1",
+    "@babel/plugin-transform-runtime": "^7.19.6",
+    "@babel/preset-env": "^7.20.2",
+    "@lopatnov/rollup-plugin-uglify": "^2.1.5",
+    "@rollup/plugin-babel": "^6.0.3",
+    "ava": "^5.1.0",
+    "core-js": "^3.26.1",
+    "eslint": "^8.28.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "nyc": "^15.1.0",
+    "prettier": "^2.8.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^3.4.0"
+  }
+}
