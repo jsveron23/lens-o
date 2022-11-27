@@ -1,12 +1,12 @@
 {
-  "name": "object-path",
-  "version": "1.0.0",
+  "name": "lens-o",
+  "version": "0.9.0",
   "description": "Parse object path",
-  "main": "lib/index.js",
+  "main": "cjs/index.js",
   "module": "es/index.js",
   "scripts": {
-    "clean": "rimraf lib es",
-    "build": "npm run clean && NODE_ENV=production rollup --config ./rollup.config.js",
+    "clean": "rimraf cjs es",
+    "build": "npm run clean && NODE_ENV=production rollup -c",
     "lint": "eslint 'src/**/*.js'",
     "prettier": "prettier -c src/**/*.js",
     "test": "nyc ava",
@@ -16,10 +16,16 @@
     "parse",
     "object",
     "path",
-    "object-path"
+    "object-path",
+    "lens",
+    "lens-object",
+    "lens-o",
+    "getVal",
+    "setVal",
+    "parsePath"
   ],
   "files": [
-    "lib",
+    "cjs",
     "es"
   ],
   "prettier": {
@@ -30,6 +36,15 @@
     "trailingComma": "all",
     "bracketSpacing": true,
     "proseWrap": "always"
+  },
+  "ava": {
+    "require": [
+      "@babel/register"
+    ],
+    "files": [
+      "test/**/*"
+    ],
+    "verbose": true
   },
   "repository": {
     "type": "git",
@@ -46,7 +61,7 @@
     "@babel/eslint-parser": "^7.19.1",
     "@babel/plugin-transform-runtime": "^7.19.6",
     "@babel/preset-env": "^7.20.2",
-    "@lopatnov/rollup-plugin-uglify": "^2.1.5",
+    "@babel/register": "^7.18.9",
     "@rollup/plugin-babel": "^6.0.3",
     "ava": "^5.1.0",
     "core-js": "^3.26.1",

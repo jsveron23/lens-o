@@ -1,0 +1,15 @@
+module.exports = {
+  include: ['src/**/*'],
+  'check-coverage': true,
+  'per-file': true,
+  reporter: ['html', 'text'],
+  failFast: true,
+  branches: 70,
+  lines: 70,
+  functions: 70,
+  statements: 70,
+  instrument: true,
+  sourceMap: false,
+  cache: true,
+  all: true,
+};
