@@ -1,9 +1,9 @@
 import test from 'ava';
-import getVal from '../src/getVal';
+import get from '../src/get';
 
-test('getVal: Standard usage', (t) => {
+test('get: Standard usage', (t) => {
   t.is(
-    getVal('a.b.1.c', {
+    get('a.b.1.c', {
       a: {
         b: [
           {
@@ -19,7 +19,7 @@ test('getVal: Standard usage', (t) => {
   );
 
   t.is(
-    getVal(['a', 'b', 1, 'c'], {
+    get(['a', 'b', 1, 'c'], {
       a: {
         b: [
           {

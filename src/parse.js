@@ -13,7 +13,7 @@ function _reduce(handleIndex) {
   }, []);
 }
 
-function parsePath(path) {
+function parse(path) {
   return compose(
     _reduce((acc, n) => {
       if (n < 0) {
@@ -26,25 +26,25 @@ function parsePath(path) {
   )(path);
 }
 
-parsePath.ignore = function ignore(path) {
+parse.ignore = function ignore(path) {
   return compose(
     _reduce((acc, n) => (n > -1 ? [...acc, n] : acc)),
     split('.'),
   )(path);
 };
 
-parsePath.unsafe = function unsafe(path) {
+parse.unsafe = function unsafe(path) {
   return compose(
     _reduce((acc, n) => [...acc, n > -1 ? n : 0]),
     split('.'),
   )(path);
 };
 
-parsePath.abs = function abs(path) {
+parse.abs = function abs(path) {
   return compose(
     _reduce((acc, n) => [...acc, Math.abs(n)]),
     split('.'),
   )(path);
 };
 
-export default parsePath;
+export default parse;

@@ -1,11 +1,11 @@
 import { is, view, curry, lensPath, compose } from 'ramda';
-import parsePath from './parsePath';
+import parse from './parse';
 
-function getVal(path, o) {
+function get(path, o) {
   let lens;
 
   if (is(String, path)) {
-    lens = compose(lensPath, parsePath)(path);
+    lens = compose(lensPath, parse)(path);
   } else if (is(Array, path)) {
     lens = lensPath(path);
   }
@@ -13,4 +13,4 @@ function getVal(path, o) {
   return view(lens, o);
 }
 
-export default curry(getVal);
+export default curry(get);

@@ -1,6 +1,6 @@
 {
   "name": "lens-o",
-  "version": "0.10.0",
+  "version": "1.0.0",
   "description": "Parse object path and get, set value",
   "main": "cjs/index.js",
   "module": "es/index.js",
@@ -16,13 +16,11 @@
     "parse",
     "object",
     "path",
-    "object-path",
     "lens",
-    "lens-object",
     "lens-o",
-    "getVal",
-    "setVal",
-    "parsePath"
+    "get",
+    "set",
+    "parse"
   ],
   "files": [
     "cjs",

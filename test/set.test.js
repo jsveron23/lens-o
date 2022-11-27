@@ -1,9 +1,9 @@
 import test from 'ava';
-import setVal from '../src/setVal';
+import set from '../src/set';
 
-test('setVal: Standard usage', (t) => {
+test('set: Standard usage', (t) => {
   t.deepEqual(
-    setVal('a.b.1.c', 'x', {
+    set('a.b.1.c', 'x', {
       a: {
         b: [
           {
@@ -30,7 +30,7 @@ test('setVal: Standard usage', (t) => {
   );
 
   t.deepEqual(
-    setVal(['a', 'b'], 'x', {
+    set(['a', 'b'], 'x', {
       a: {
         b: [
           {
