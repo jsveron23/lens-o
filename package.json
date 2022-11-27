@@ -1,7 +1,7 @@
 {
   "name": "lens-o",
-  "version": "0.9.1",
-  "description": "Parse object path and get value, set value",
+  "version": "0.10.0",
+  "description": "Parse object path and get, set value",
   "main": "cjs/index.js",
   "module": "es/index.js",
   "scripts": {

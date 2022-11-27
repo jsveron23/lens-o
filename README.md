@@ -1,4 +1,4 @@
-# lens-o
+# lens-o [![npm](https://img.shields.io/npm/v/lens-o)](https://www.npmjs.com/package/lens-o)
 
 - Parse object path
 - Get value from parsed path
@@ -26,28 +26,54 @@ const path = parsePath.abs('a.b.-1.c');
 // path = ['a', 'b', 1, 'c'] - absolute number
 
 const val = getVal('a.b.1.c', {
-	a: 1,
-	b: [
-		{
-			c: 'hello',
-		},
-		{
-			c: 'world',
-		},
-	],
+	a: {
+		b: [
+			{
+				c: 'hello',
+			},
+			{
+				c: 'world',
+			},
+		],
+	},
+});
+const val = getVal(path, {
+	a: {
+		b: [
+			{
+				c: 'hello',
+			},
+			{
+				c: 'world',
+			},
+		],
+	},
 });
 // val = world
 
 const val = setVal('a.b.1.c', 'x', {
-	a: 1,
-	b: [
-		{
-			c: 'hello',
-		},
-		{
-			c: 'world',
-		},
-	],
+	a: {
+		b: [
+			{
+				c: 'hello',
+			},
+			{
+				c: 'world',
+			},
+		],
+	},
+});
+const val = setVal(path, 'x', {
+	a: {
+		b: [
+			{
+				c: 'hello',
+			},
+			{
+				c: 'world',
+			},
+		],
+	},
 });
 // val = {
 // 	a: 1,

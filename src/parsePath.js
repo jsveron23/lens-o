@@ -1,4 +1,4 @@
-import { curry, compose, reduce, split } from 'ramda';
+import { compose, reduce, split } from 'ramda';
 
 function _reduce(handleIndex) {
   return reduce((acc, p) => {
@@ -13,7 +13,7 @@ function _reduce(handleIndex) {
   }, []);
 }
 
-function _parsePath(path) {
+function parsePath(path) {
   return compose(
     _reduce((acc, n) => {
       if (n < 0) {
@@ -25,8 +25,6 @@ function _parsePath(path) {
     split('.'),
   )(path);
 }
-
-const parsePath = curry(_parsePath);
 
 parsePath.ignore = function ignore(path) {
   return compose(

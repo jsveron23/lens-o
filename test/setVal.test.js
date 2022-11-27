@@ -28,4 +28,24 @@ test('setVal: Standard usage', (t) => {
       },
     },
   );
+
+  t.deepEqual(
+    setVal(['a', 'b'], 'x', {
+      a: {
+        b: [
+          {
+            c: 'hello',
+          },
+          {
+            c: 'world',
+          },
+        ],
+      },
+    }),
+    {
+      a: {
+        b: 'x',
+      },
+    },
+  );
 });
