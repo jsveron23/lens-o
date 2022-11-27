@@ -1,4 +1,4 @@
-# o-path
+# lens-o
 
 - Parse object path
 - Get value from parsed path
@@ -7,13 +7,13 @@
 ## Install
 
 ```
-npm install o-path
+npm install lens-o
 ```
 
 ## Usage
 
 ```js
-import { parsePath, getVal, setVal } from 'o-path';
+import { parsePath, getVal, setVal } from 'lens-o';
 
 const path = parsePath('a.b.1.c');
 // path = ['a', 'b', 1, 'c']

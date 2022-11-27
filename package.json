@@ -1,7 +1,7 @@
 {
   "name": "lens-o",
-  "version": "0.9.0",
-  "description": "Parse object path",
+  "version": "0.9.1",
+  "description": "Parse object path and get value, set value",
   "main": "cjs/index.js",
   "module": "es/index.js",
   "scripts": {
@@ -48,7 +48,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jsveron23/object-path.git"
+    "url": "git+https://github.com/jsveron23/lens-o.git"
   },
   "author": "Tony Jin <jsveron23@gmail.com>",
   "license": "MIT",
