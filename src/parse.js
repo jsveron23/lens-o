@@ -1,4 +1,4 @@
-import { compose, reduce, split } from 'ramda';
+import { compose, is, reduce, split } from 'ramda';
 
 function _reduce(handleIndex) {
   return reduce((acc, p) => {
@@ -14,6 +14,10 @@ function _reduce(handleIndex) {
 }
 
 function parse(path) {
+  if (!is(String, path)) {
+    throw new Error('Given value is must be string!');
+  }
+
   return compose(
     _reduce((acc, n) => {
       if (n < 0) {

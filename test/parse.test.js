@@ -20,3 +20,9 @@ test('parse: Replace nagative index to zero', (t) => {
 test('parse: Replace nagative index to absolute number', (t) => {
   t.deepEqual(parse.abs('a.b.-3.c'), ['a', 'b', 3, 'c']);
 });
+
+test('parse: Parse onlt string', (t) => {
+  t.throws(() => parse([]));
+  t.throws(() => parse({}));
+  t.throws(() => parse(1));
+});
