@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import test from 'ava';
 import parse from '../src/parse';
 
@@ -21,7 +22,7 @@ test('parse: Replace nagative index to absolute number', (t) => {
   t.deepEqual(parse.abs('a.b.-3.c'), ['a', 'b', 3, 'c']);
 });
 
-test('parse: Parse onlt string', (t) => {
+test('parse: Parse only string', (t) => {
   t.throws(() => parse([]));
   t.throws(() => parse({}));
   t.throws(() => parse(1));
